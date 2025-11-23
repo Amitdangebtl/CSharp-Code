@@ -1,0 +1,62 @@
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    public static bool IsAnagram(string Str1,string Str2)
+    {
+        if(Str1.Length != Str2.Length)
+        {
+            return false;
+        }
+        char[] ch1 = Str1.ToCharArray();
+        char[] ch2 = Str2.ToCharArray();
+        
+        Dictionary<char,int>freq = new Dictionary<char,int>();
+        for(int i = 0;i<ch1.Length;i++)
+        {
+            if(freq.ContainsKey(ch1[i]))
+            {
+                freq[ch1[i]]++;
+            }
+            else
+            {
+                 freq[ch1[i]] = 1;
+            }
+        }
+        for(int i = 0;i<ch2.Length;i++)
+        {
+            if(freq.ContainsKey(ch2[i]))
+            {
+                freq[ch2[i]]--;
+            }
+            else
+            {
+                 return false;
+            }
+        }
+        foreach(var item in freq)
+        {
+            if(item.Value != 0)
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+    public static void Main(string[]args)
+    {
+        Console.WriteLine("Enter First String : ");
+        string S1 = Console.ReadLine();
+        Console.WriteLine("Enter Secode String : ");
+        string S2 = Console.ReadLine();
+        if(IsAnagram(S1,S2))
+        {
+            Console.WriteLine("Anagram !!");
+        }
+        else
+        {
+            Console.WriteLine("String is Not Anagram !!");
+        }
+    }
+}
