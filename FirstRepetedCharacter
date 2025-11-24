@@ -1,0 +1,38 @@
+using System;
+using System.Collections.Generic;
+
+class Program 
+{
+    public static string FirstRepetedCharacter(string s)
+    {
+        char[] ch = s.ToCharArray();
+        Dictionary<char,int>freq = new Dictionary<char,int>();
+        for(int i = 0;i<s.Length;i++)
+        {
+            if(freq.ContainsKey(s[i]))
+            {
+                freq[s[i]]++;
+            }
+            else
+            {
+                freq[s[i]]=1;
+            }
+        }
+        foreach(var item in freq)
+        {
+            if(item.Value > 1)
+            {
+                return item.Key.ToString();
+            }
+        }
+        return "No repited Char !!";
+    }
+    public static void Main(string[]args)
+    {
+        Console.WriteLine("Enter String : ");
+        string s = Console.ReadLine();
+        
+        Console.WriteLine(" First Repited Char is  : "+ FirstRepetedCharacter(s));
+        
+    }
+}
