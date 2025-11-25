@@ -1,0 +1,39 @@
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    public static char MaximumAccureCharacter(string s)
+    {
+        char[] ch = s.ToCharArray(); int Max = int.MinValue;
+        char ans = '\0';
+        Dictionary<char,int>freq = new Dictionary<char,int>();
+        for(int i = 0;i<ch.Length;i++)
+        {
+            if(freq.ContainsKey(ch[i]))
+            {
+                freq[ch[i]]++;
+            }
+            else
+            {
+                freq[ch[i]]=1;
+            }
+        }
+        foreach(var item in freq)
+        {
+            if(item.Value > Max)
+            {
+                Max = item.Value;
+                ans = item.Key;
+            }
+        }
+        return ans;
+    }
+    public static void Main(string[]args)
+    {
+        Console.WriteLine("Enter String : ");
+        string s = Console.ReadLine();
+        
+        Console.WriteLine("Maximum Accure Character is : "+MaximumAccureCharacter(s));
+    }
+}
