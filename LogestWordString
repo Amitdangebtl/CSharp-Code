@@ -1,0 +1,30 @@
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    public static string LogestWordString(string s)
+    {
+        string[] Word = s.Split(' ');
+        int max = int.MinValue;
+        string str = " ";
+        
+        for(int i = 0;i<Word.Length;i++)
+        {
+            if(Word[i].Length>max)
+            {
+                max = Word[i].Length;
+                str = Word[i];
+            }
+        }
+        return str;
+    }
+    public static void Main(string[]args)
+    {
+        Console.WriteLine("Enter String : ");
+        string s = Console.ReadLine();
+        
+        Console.WriteLine("Longest Word in String is : "+LogestWordString(s) );
+    
+    }
+}
