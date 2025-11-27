@@ -1,0 +1,30 @@
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    public static string ReverseString(string s)
+    {
+        char[] ch = s.ToCharArray();
+        int First = 0;
+        int Last = ch.Length-1;
+        while(First<Last)
+        {
+            char temp = ch[First];
+            ch[First] = ch[Last];
+            ch[Last] = temp;
+            
+            First++;
+            Last--;
+        }
+        return new string(ch);
+    }
+    public static void Main(string[]args)
+    {
+        Console.WriteLine("Enter String : ");
+        string s = Console.ReadLine();
+        
+        Console.WriteLine("After Reverse String : "+ReverseString(s));
+        
+    }
+}
