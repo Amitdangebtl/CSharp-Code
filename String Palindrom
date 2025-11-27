@@ -1,0 +1,36 @@
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    public static bool StringPalindrom(string s)
+    {
+        int First = 0;
+        int Last = s.Length-1;
+        while(First<Last)
+        {
+            if(s[First]!=s[Last])
+            {
+                return false;
+            }
+            First++;
+            Last--;
+        }
+        return true;
+    }
+    
+    public static void Main(string[]args)
+    {
+        Console.WriteLine("Enter String : ");
+        string s = Console.ReadLine();
+        
+        if(StringPalindrom(s))
+        {
+            Console.WriteLine("String Are Palindrom!!!");
+        }
+        else
+        {
+            Console.WriteLine("String Are Not Palindrome!!!");
+        }
+    }
+}
