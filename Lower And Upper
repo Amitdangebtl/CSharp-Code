@@ -1,0 +1,20 @@
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    public static void LowerAndUpper(string s)
+    {
+      string lower = s.ToLower();
+      string upper = s.ToUpper();
+
+        Console.WriteLine("After Convert To Lower : "+lower);
+        Console.WriteLine("After Convert To Upper : "+upper);
+    }
+    public static void Main(string[]args)
+    {
+        Console.WriteLine("Enter String : ");
+        string s = Console.ReadLine();
+        LowerAndUpper(s);
+    }
+}
