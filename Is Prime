@@ -1,0 +1,32 @@
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    public static bool IsPrime(int n)
+    {
+        if(n < 2) return false;
+        
+        for(int i = 2;i <= n/2 ;i++)
+        {
+            if(n%i==0) return false;
+        }
+        return true;
+    }
+    
+    public static void Main(string[]args)
+    {
+        Console.WriteLine("Enter Numeber : ");
+        int n = int.Parse(Console.ReadLine());
+        
+        if(IsPrime(n))
+        {
+            Console.WriteLine("This Number Is Prime !!!");
+        }
+        else
+        {
+           Console.WriteLine("This Number Is Not Prime !!!");
+
+        }
+    }
+}
