@@ -1,0 +1,40 @@
+using System;
+using System.Collections.Generic;
+
+class Program
+
+{
+    public static void ReverseArray(List<int>arr)
+    {
+        int First = 0;
+        int Last = arr.Count -1 ;
+        while(First<Last)
+        {
+            int temp = arr[First];
+            arr[First] = arr[Last];
+            arr[Last] = temp;
+            First++;
+            Last--;
+        }
+    }
+    public static void Main(string[]args)
+    {
+        Console.WriteLine("Enetr size of array : ");
+        int n = int.Parse(Console.ReadLine());
+        
+        List<int>arr = new List<int>();
+        Console.WriteLine("Enter Numeber in array : ");
+        for(int i = 0;i<n;i++)
+        {
+            int num = int.Parse(Console.ReadLine());
+            arr.Add(num);
+        }
+        Console.WriteLine("Reverse Array : ");
+        ReverseArray(arr);
+        for(int i = 0;i<arr.Count;i++)
+        {
+            Console.Write(arr[i]+" ");
+        }
+        
+    }
+}
