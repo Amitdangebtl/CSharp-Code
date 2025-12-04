@@ -1,0 +1,31 @@
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    public static int MaximumElement(List<int>arr)
+    {
+        int Max = int.MinValue;
+        for(int i = 0;i<arr.Count;i++)
+        {
+            if(arr[i] > Max)
+            {
+                Max = arr[i];
+            }
+        }
+        return Max;
+    }
+    public static void Main(string[]args)
+    {
+        Console.WriteLine("Enter array Size : ");
+        int n = int.Parse(Console.ReadLine());
+        List<int>arr = new List<int>();
+        Console.WriteLine("Enter Elements : ");
+        for(int i =0;i<n;i++)
+        {
+            int num = int.Parse(Console.ReadLine());
+            arr.Add(num);
+        }
+        Console.WriteLine(" Maximum Element in array :  "+ MaximumElement(arr));
+    }
+}
