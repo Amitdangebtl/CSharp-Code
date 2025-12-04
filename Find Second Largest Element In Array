@@ -1,0 +1,39 @@
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    public static int SecondLargestElement(List<int>arr)
+    {
+        int Max = int.MinValue;
+        int SecondeMax = int.MinValue;
+        
+        for(int i = 0;i<arr.Count;i++)
+        {
+             if(arr[i] > Max)
+             {
+                  SecondeMax = Max;
+                  Max = arr[i];
+             }
+             else if (arr[i]<Max && arr[i]>SecondeMax)
+             {
+                 SecondeMax = arr[i];
+             }
+        }
+        return SecondeMax;
+    }
+    public static void Main(string[]args)
+    {
+        Console.WriteLine("Enter Size of array : ");
+        int n = int.Parse(Console.ReadLine());
+        
+        List<int>arr = new List<int>();
+        Console.WriteLine("Enter Number in array : ");
+        for(int i = 0;i<n;i++)
+        {
+            int num = int.Parse(Console.ReadLine());
+            arr.Add(num);
+        }
+        Console.WriteLine("The Seconde Largest Number In array is : "+SecondLargestElement(arr));
+    }
+}
