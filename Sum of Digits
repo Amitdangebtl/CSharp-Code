@@ -1,0 +1,24 @@
+// Sum of Digits
+
+using System;
+class Program
+{
+    public static int SumOfDigit(int n)
+    {
+        int Sum = 0;
+        while(n!=0)
+        {
+            int digit = n % 10;
+            Sum += digit;
+            n /= 10;
+        }
+        return Sum;
+    }
+     public static void Main(string[]args)
+    {
+        Console.WriteLine("Enter the Number : ");
+        int n = int.Parse(Console.ReadLine());
+        
+        Console.WriteLine("Sum Number is : "+SumOfDigit(n));
+    }  
+}
