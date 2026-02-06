@@ -1,0 +1,31 @@
+//Write a program to count how many even numbers are present in the array.
+
+using System;
+class Program 
+{
+    public static int EvenNumber(int[] arr)
+    {
+        int count = 0;
+        for(int i = 0; i<arr.Length;i++)
+        {
+            if(arr[i]%2 == 0)
+            {
+                count++;
+            }
+        }
+        return count;
+    }
+    public static void Main(string[]args)
+    {
+        Console.WriteLine("Enter the size of array : ");
+        int n = int.Parse(Console.ReadLine());
+        
+        int[] arr = new int[n];
+        Console.WriteLine("Enter the Elements : ");
+        for(int i = 0; i<n; i++)
+        {
+            arr[i] = int.Parse(Console.ReadLine());
+        }
+        Console.WriteLine("Total Even Number Count Are : "+EvenNumber(arr));
+    }
+}
