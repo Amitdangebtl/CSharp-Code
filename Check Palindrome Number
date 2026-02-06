@@ -1,0 +1,32 @@
+// Check Palindrome Number
+
+using System;
+
+class Progrm
+{
+    public static bool IsPalindromNumber(int n)
+    {
+        int Reverse = 0 ; int  Orignal = n;
+        while(n!=0)
+        {
+            int digit = n%10;
+            Reverse = Reverse * 10 + digit ;
+            n /= 10;
+        }
+        return Reverse == Orignal;
+    }
+    public static void Main(string[]args)
+    {
+         Console.WriteLine("Enter the Number : ");
+        int n = int.Parse(Console.ReadLine());
+        
+        if(IsPalindromNumber(n))
+        {
+            Console.WriteLine("Number is Palindrom !!");
+        }
+        else
+        {
+            Console.WriteLine("Number is Not Palindrom !!");
+        }
+    } 
+}
