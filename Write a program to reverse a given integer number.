@@ -1,0 +1,24 @@
+//Write a program to reverse a given integer number.
+using System;
+
+class Program
+{
+    public static int ReverseNumber(int n)
+    {
+        int Reverse = 0;
+        while(n!=0)
+        {
+            int digit = n%10;
+            Reverse = Reverse * 10 + digit;
+            n /= 10;
+        }
+        return Reverse;
+    }
+    public static void Main(string[]args)
+    {
+        Console.WriteLine("Enter the Number : ");
+        int n = int.Parse(Console.ReadLine());
+        
+        Console.WriteLine("Reverse Number is : "+ReverseNumber(n));
+    }  
+}
